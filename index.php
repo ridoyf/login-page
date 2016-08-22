@@ -27,7 +27,13 @@
         </script>
 		
 		
-		<style>	
+		<style>
+			.container{
+				max-width: 100%;
+			}
+			.modal-title{
+				color: #017572;
+			}
 			.form-signin {
 				max-width: 330px;
 				padding: 15px;
@@ -45,7 +51,7 @@
 			}
 			
 			.form-signin .form-control {
-				position: relative;
+				
 				height: auto;
 				-webkit-box-sizing: border-box;
 				-moz-box-sizing: border-box;

@@ -1,0 +1,59 @@
+body {
+	background: url("images/green.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.card{
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+	transition: all .15s;
+	
+}
+.card:hover{
+	width: 510px;
+}
+.container {
+	margin-top: 7%;
+}
+
+h2 {
+	text-align: center;
+}
+
+.upload {
+	height: 90px;
+}
+
+.file {
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.form {
+	position: relative;
+	height: 50px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.submit {
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%)
+}
+
+.image {
+	max-height: 60px;
+	max-width: auto;
+	position: absolute;
+	right: 10px;
+	top: 0px;
+	padding: 5px;
+}
