@@ -11,6 +11,22 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/js/bootstrap.min.js" integrity="sha384-ux8v3A6CPtOTqOzMKiuo3d/DomGaaClxFYdCu2HPMBEkf6x2xiDyJ7gkXU0MWwaD" crossorigin="anonymous"></script>
+		
+		<!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/0.1.12/wow.min.js"></script>
+        <link rel="stylesheet" href="https://daneden.github.io/animate.css/animate.min.css">
+        
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="animate.min.css">
+        <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+        
+        <script>
+            new WOW().init();
+        </script>
+		
+		
 		<style>	
 			.form-signin {
 				max-width: 330px;
@@ -113,7 +129,38 @@
 			</div>
 		</div>
 		
-		<!--icons and content-->
+		<div class="apps">
+         <div class="item animated bounceInDown">
+            <a href="apk/SmartSwitch.apk">
+            <div class="circle" id="samsung"></div>
+            </a>
+            <p>Samsung Smart Switch Mobile</p>
+            </div>
+            <div class="item animated bounceInRight">
+            <a href="apk/HTCTransferTool.apk">
+            <div class="circle" id="htc"></div>
+            </a>
+            <p>HTC Transfer Tool</p>
+            </div>
+            <div class="item animated bounceInLeft">
+            <a href="apk/MoveToIOS.apk">
+            <div class="circle" id="ios"></div>
+            </a>
+            <p>Move to iOS</p>
+            </div>
+            <div class="item animated bounceInRight">
+            <a href="apk/XperiaTransferTool.apk">
+            <div class="circle" id="xperia"></div>
+            </a>
+            <p>Xperia Transfer Mobile</p>
+            </div>
+            <div class="item animated bounceInUp">
+            <a href="apk/PhoneClone.apk">
+            <div class="circle" id="phone-clone"></div>
+            </a>
+            <p>Phone Clone</p>
+            </div>
+        </div>
 	</body>
 
 	</html>
