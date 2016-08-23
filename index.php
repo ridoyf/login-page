@@ -17,6 +17,9 @@
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/0.1.12/wow.min.js"></script>
         <link rel="stylesheet" href="https://daneden.github.io/animate.css/animate.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
         
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="animate.min.css">
@@ -26,72 +29,13 @@
             new WOW().init();
         </script>
 		
-		
-		<style>
-			.container{
-				max-width: 100%;
-			}
-			.modal-title{
-				color: #017572;
-			}
-			.form-signin {
-				max-width: 330px;
-				padding: 15px;
-				margin: 0 auto;
-				color: #017572;
-			}
-			
-			.form-signin .form-signin-heading,
-			.form-signin .checkbox {
-				margin-bottom: 10px;
-			}
-			
-			.form-signin .checkbox {
-				font-weight: normal;
-			}
-			
-			.form-signin .form-control {
-				
-				height: auto;
-				-webkit-box-sizing: border-box;
-				-moz-box-sizing: border-box;
-				box-sizing: border-box;
-				padding: 10px;
-				font-size: 16px;
-			}
-			
-			.form-signin .form-control:focus {
-				z-index: 2;
-			}
-			
-			.form-signin input[type="text"] {
-				margin-bottom: -1px;
-				border-bottom-right-radius: 0;
-				border-bottom-left-radius: 0;
-				border-color: #017572;
-			}
-			
-			.form-signin input[type="password"] {
-				margin-bottom: 10px;
-				border-top-left-radius: 0;
-				border-top-right-radius: 0;
-				border-color: #017572;
-			}
-			
-			h2 {
-				text-align: center;
-				color: #017572;
-			}
-			.log-in{
-				position: absolute;
-				top: 0;
-				right: 0;
-			}
-		</style>
 	</head>
 
 	<body>
-		<button type="button" class="btn btn-primary btn log-in" data-toggle="modal" data-target="#myModal"> Log in </button>
+		<div class="header">
+			<h2>Transfer Tool</h2>
+			<button type="button" class="btn btn-primary btn-lg log-in" data-toggle="modal" data-target="#myModal"> Log in </button>
+		</div>
 		<!-- Modal -->
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-dialog" role="document">
@@ -124,7 +68,7 @@
 								</br>
 								Password: <input type="password" class="form-control" name="password" required>
 								
-								<button class="btn btn-lg btn-primary btn-block" type="submit" name="login">Login</button>
+								<button class="btn btn-lg btn-success btn-block" type="submit" name="login">Login</button>
 							</form>
 						</div>
 					</div>
@@ -152,7 +96,7 @@
             <a href="apk/MoveToIOS.apk">
             <div class="circle" id="ios"></div>
             </a>
-            <p>Move to iOS</p>
+            <p>Move to IOS</p>
             </div>
             <div class="item animated bounceInRight">
             <a href="apk/XperiaTransferTool.apk">

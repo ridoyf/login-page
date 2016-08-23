@@ -1,190 +1,57 @@
 <?php
-    <?php 
-	session_start();
-
-	if(!isset($_SESSION['username']) || $_SESSION['username'] != 'user'){
-		header('Location: index.php');
-	}
-    
-    function samsung(){
-       if(isset($_FILES['samsung'])){
-          $errors= array();
-          $file_name = $_FILES['samsung']['name'];
-          $file_size = $_FILES['samsung']['size'];
-          $file_tmp = $_FILES['samsung']['tmp_name'];
-          $file_type = $_FILES['samsung']['type'];
-          $file_ext=strtolower(end(explode('.',$_FILES['samsung']['name'])));
-          $expensions= array("apk");
-
-          if(in_array($file_ext,$expensions)=== false){
-             $errors[]="extension not allowed, please choose an APK file.";
-          }
-
-          if(empty($errors)==true) {
-              if($file_size != 0){
-                move_uploaded_file($file_tmp,'apk/SmartSwitch.apk');
-              }
-          }else{
-             print_r($errors);
-          }
-       }
+$target_dir = "uploads/";
+$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+$uploadOk = 1;
+$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+// Check if image file is a actual image or fake image
+if(isset($_POST["submit"])) {
+    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+    if($check !== false) {
+        echo "File is an image - " . $check["mime"] . ".";
+        $uploadOk = 1;
+    } else {
+        echo "File is not an image.";
+        $uploadOk = 0;
     }
-    function htc(){
-       if(isset($_FILES['htc'])){
-          $errors= array();
-          $file_name = $_FILES['htc']['name'];
-          $file_size = $_FILES['htc']['size'];
-          $file_tmp = $_FILES['htc']['tmp_name'];
-          $file_type = $_FILES['htc']['type'];
-          $file_ext=strtolower(end(explode('.',$_FILES['htc']['name'])));
-          $expensions= array("apk");
-
-          if(in_array($file_ext,$expensions)=== false){
-             $errors[]="extension not allowed, please choose an APK file.";
-          }
-
-          if(empty($errors)==true) {
-              if($file_size != 0){
-                move_uploaded_file($file_tmp,'apk/HTCTransferTool.apk');
-
-              }
-          }else{
-             print_r($errors);
-          }
-       }
+}
+// Check if file already exists
+if (file_exists($target_file)) {
+    echo "Sorry, file already exists.";
+    $uploadOk = 0;
+}
+// Check file size
+if ($_FILES["fileToUpload"]["size"] > 500000) {
+    echo "Sorry, your file is too large.";
+    $uploadOk = 0;
+}
+// Allow certain file formats
+if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+&& $imageFileType != "gif" ) {
+    echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+    $uploadOk = 0;
+}
+// Check if $uploadOk is set to 0 by an error
+if ($uploadOk == 0) {
+    echo "Sorry, your file was not uploaded.";
+// if everything is ok, try to upload file
+} else {
+    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+    } else {
+        echo "Sorry, there was an error uploading your file.";
     }
-    function ios(){
-       if(isset($_FILES['ios'])){
-          $errors= array();
-          $file_name = $_FILES['ios']['name'];
-          $file_size = $_FILES['ios']['size'];
-          $file_tmp = $_FILES['ios']['tmp_name'];
-          $file_type = $_FILES['ios']['type'];
-          $file_ext=strtolower(end(explode('.',$_FILES['ios']['name'])));
-          $expensions= array("apk");
-
-          if(in_array($file_ext,$expensions)=== false){
-             $errors[]="extension not allowed, please choose an APK file.";
-          }
-
-          if(empty($errors)==true) {
-              if($file_size != 0){
-                move_uploaded_file($file_tmp,'apk/MoveToIOS.apk');
-
-              }
-          }else{
-             print_r($errors);
-          }
-       }
-    }
-    function xperia(){
-       if(isset($_FILES['xperia'])){
-          $errors= array();
-          $file_name = $_FILES['xperia']['name'];
-          $file_size = $_FILES['xperia']['size'];
-          $file_tmp = $_FILES['xperia']['tmp_name'];
-          $file_type = $_FILES['xperia']['type'];
-          $file_ext=strtolower(end(explode('.',$_FILES['xperia']['name'])));
-          $expensions= array("apk");
-
-          if(in_array($file_ext,$expensions)=== false){
-             $errors[]="extension not allowed, please choose an APK file.";
-          }
-
-          if(empty($errors)==true) {
-              if($file_size != 0){
-                move_uploaded_file($file_tmp,'apk/XperiaTransferTool.apk');
-
-              }
-          }else{
-             print_r($errors);
-          }
-       }
-    }
-    function phone(){
-       if(isset($_FILES['phone'])){
-          $errors= array();
-          $file_name = $_FILES['phone']['name'];
-          $file_size = $_FILES['phone']['size'];
-          $file_tmp = $_FILES['phone']['tmp_name'];
-          $file_type = $_FILES['phone']['type'];
-          $file_ext=strtolower(end(explode('.',$_FILES['phone']['name'])));
-          $expensions= array("apk");
-
-          if(in_array($file_ext,$expensions)=== false){
-             $errors[]="extension not allowed, please choose an APK file.";
-          }
-
-          if(empty($errors)==true) {
-              if($file_size != 0){
-                move_uploaded_file($file_tmp,'apk/PhoneClone.apk');
-
-              }
-          }else{
-             print_r($errors);
-          }
-       }
-    }
+}
 ?>
-<html>
-    <head>
-        
-    </head>
-    <body>
-        <div id="samsung">
-            <div class="upload">
 
-                <h2>SmartSwitch</h2>
-                <form action = "<?php samsung() ?>" method = "POST" enctype = "multipart/form-data">
-                    <input type = "file" name = "samsung" />
-                    <input type = "submit"/>			
-                </form>
-            </div>
-        </div>
-        
-        <div id="htc">
-            <div class="upload">
-
-                <h2>HTC Transfer Tool</h2>
-                <form action = "<?php htc()?>" method = "POST" enctype = "multipart/form-data">
-                    <input type = "file" name = "htc" />
-                    <input type = "submit"/>			
-                </form>
-            </div>
-        </div>
-        <div id="ios">
-            <div class="upload">
-
-                <h2>Move to IOS</h2>
-                <form action = "<?php ios()?>" method = "POST" enctype = "multipart/form-data">
-                    <input type = "file" name = "ios" />
-                    <input type = "submit"/>			
-                </form>
-            </div>
-        </div>
-        <div id="xperia">
-            <div class="upload">
-
-                <h2>Xperia Transfer Tool</h2>
-                <form action = "<?php xperia() ?>" method = "POST" enctype = "multipart/form-data">
-                    <input type = "file" name = "xperia" />
-                    <input type = "submit"/>			
-                </form>
-            </div>
-        </div>
-        <div id="phone">
-            <div class="upload">
-
-                <h2>Phone Clone</h2>
-                <form action = "<?php phone()?>" method = "POST" enctype = "multipart/form-data">
-                    <input type = "file" name = "phone" />
-                    <input type = "submit"/>			
-                </form>
-            </div>
-        </div>
-        
-        <form method="post" action="logout.php">
-    <input type="submit" value="Logout">
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<form action="upload.php" method="post" enctype="multipart/form-data">
+    Select image to upload:
+    <input type="file" name="fileToUpload" id="fileToUpload">
+    <input type="submit" value="Upload Image" name="submit">
 </form>
-    </body>
+</body>
 </html>
